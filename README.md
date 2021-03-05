@@ -41,7 +41,7 @@ THEN I exit the application, and the HTML is generated
 
 The following image shows a mock-up of the generated HTML’s appearance and functionality:
 
-![Team Profile Generator App](https://drive.google.com/file/d/1hVtfPv32mkrCosY8hbwwQCzjtgzDgsax/view?usp=sharing)
+[Team Profile Generator App](https://drive.google.com/file/d/1hVtfPv32mkrCosY8hbwwQCzjtgzDgsax/view?usp=sharing)
 
 
 
