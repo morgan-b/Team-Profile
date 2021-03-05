@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
-const Employee = require("./lib/Employee");
+
 
 const employeesFinal = [];
 
@@ -84,7 +84,7 @@ function newTeamMember() {
             choices: [
                 "Yes, add an Engineer",
                 "Yes, add an Intern",
-                "No",
+                "No, my team is complete!",
             ],
             name: "addTeamMember"
 
