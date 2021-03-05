@@ -4,6 +4,7 @@ const inquirer = require('inquirer');
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
+const Employee = require("./lib/Employee");
 
 
 const employeesFinal = [];
@@ -66,8 +67,8 @@ function managerInfo() {
             const id = data.id
             const email = data.email
             const officeNumber = data.officeNumber
-            
-            const teamMember = new Manager(name, id, email, officeNumber) 
+
+            const teamMember = new Manager(name, id, email, officeNumber)
             employeesFinal.push(teamMember)
             console.log(employeesFinal)
             newTeamMember()
@@ -101,7 +102,7 @@ function newTeamMember() {
                 case "Yes, add an Intern":
                     return internInfo();
 
-                case "No":
+                case "No, my team is complete!":
                     return finalizeTeam();
 
             }
@@ -235,8 +236,8 @@ function finalizeTeam() {
 
 
 
-        const totalHTML = []
-        const htmlEl = `
+    const totalHTML = []
+    const htmlEl = `
 <!DOCTYPE html>
 <html lang="en">
 
@@ -258,10 +259,10 @@ function finalizeTeam() {
 <div class="container mb-3">
 <div class="row">`
 
-        totalHTML.push(htmlEl);
+    totalHTML.push(htmlEl);
 
-        for (let i = 0; i < employeesFinal.length; i++) {
-            let card = `
+    for (let i = 0; i < employeesFinal.length; i++) {
+        let card = `
             <div class="card border-light md-4 employeecard">
     <div class="card-body">
         <h5 class="card-header">${employeesFinal[i].name} <br>
@@ -269,11 +270,11 @@ function finalizeTeam() {
         <ul class="list-group list-group-flush">
         <li class="list-group-item">Employee ID: ${employeesFinal[i].id}</li>
         <li class="list-group-item">Email Address: <a href="mailto:${employeesFinal[i].email}">${employeesFinal[i].email}</a></li>`
- 
 
 
 
-        
+
+
 
         if (employeesFinal[i].officeNumber) {
 
@@ -294,25 +295,26 @@ function finalizeTeam() {
         }
 
         totalHTML.push(card);
-  
-            const endingHtml = `   
+
+        const endingHtml = `   
             </ul>               
 </div>
 </div>
 `
 
-    totalHTML.push(endingHtml);
-}
-const finalHTML = `
+        totalHTML.push(endingHtml);
+
+    }
+    const finalHTML = `
 
 </div>
 </div>
 </body>
 </html>`
-totalHTML.push(finalHTML);
+    totalHTML.push(finalHTML);
 
     fs.writeFile(`./dist/teamprofile.html`, totalHTML.join(""), function (err) {
-    
+
     })
 
 
