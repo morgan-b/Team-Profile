@@ -1,7 +1,9 @@
 const Intern = require("../lib/Intern.js");
 
+   //Testing Intern
 describe('Intern', () => {
 
+    //Testing Intern Name
     it("outputs Intern name", () => {
 
         const name = "Morgan";
@@ -12,7 +14,8 @@ describe('Intern', () => {
 
     });
 
-    it("outputs employee id", () => {
+    //Testing Intern ID
+    it("outputs Intern id", () => {
 
         const id = 75;
 
@@ -21,6 +24,8 @@ describe('Intern', () => {
 
 
     });
+
+    //Testing Intern Email
     it("outputs Intern email", () => {
 
         const email = "mabailey079@gmail.com";
@@ -30,6 +35,8 @@ describe('Intern', () => {
 
 
     });
+
+    //Testing Intern School
     it("outputs Intern School", () => {
 
         const school = "Foo University";
@@ -39,6 +46,8 @@ describe('Intern', () => {
 
 
     });
+
+    //Testing Intern Role
     it("outputs Intern role", () => {
 
         const role = "Intern";

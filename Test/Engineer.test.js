@@ -1,8 +1,10 @@
 
-const Engineer= require("../lib/Engineer.js");
+const Engineer = require("../lib/Engineer.js");
 
+//Testing Engineer
 describe('Engineer', () => {
 
+    //Testing Engineer Name
     it("outputs Engineer name", () => {
 
         const name = "Morgan";
@@ -13,29 +15,34 @@ describe('Engineer', () => {
 
     });
 
-    it("outputs employee id", () => {
+    //Testing Engineer ID
+    it("outputs Engineer id", () => {
 
         const id = 75;
 
-        const emp = new Engineer("value",id);
+        const emp = new Engineer("value", id);
         expect(emp.id).toEqual(id);
 
 
     });
+
+    //Testing Engineer Email
     it("outputs Engineer email", () => {
 
         const email = "mabailey079@gmail.com";
 
-        const emp = new Engineer("value","value",email);
+        const emp = new Engineer("value", "value", email);
         expect(emp.email).toEqual(email);
 
 
     });
+
+    //Testing Engineer Github
     it("outputs Engineer Github", () => {
 
         const github = "Engineer_1";
 
-        const emp = new Engineer("value","value","value",github);
+        const emp = new Engineer("value", "value", "value", github);
         expect(emp.github).toEqual(github);
 
 
@@ -44,7 +51,7 @@ describe('Engineer', () => {
 
         const role = "Engineer";
 
-        const emp = new Engineer("value1","value2","value3","value4");
+        const emp = new Engineer("value1", "value2", "value3", "value4");
         expect(emp.role).toEqual(role);
 
 

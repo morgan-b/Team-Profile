@@ -1,16 +1,20 @@
+//adding fs and Inquirer
+
 const fs = require('fs');
 const inquirer = require('inquirer');
 
+
+// adding Intern, Engineer, and Manager classes
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 const Employee = require("./lib/Employee");
 
-
+// Array for Employee information
 const employeesFinal = [];
 
 
-
+//Using inquirer to ask for team Manager information
 function managerInfo() {
 
     inquirer.prompt([
@@ -77,6 +81,8 @@ function managerInfo() {
 
 };
 
+//Using inquirer to ask  if the user wants to add a new team member
+
 function newTeamMember() {
     inquirer.prompt([
         {
@@ -109,6 +115,8 @@ function newTeamMember() {
         })
 
 }
+
+//If user chooses to add an intern, this function uses inquirer to ask for info
 
 function internInfo() {
     inquirer.prompt([
@@ -170,6 +178,8 @@ function internInfo() {
         });
 };
 
+
+//If user chooses to add an Engineer, this function uses inquirer to ask for info
 function engineerInfo() {
     inquirer.prompt([
         {
@@ -232,11 +242,14 @@ function engineerInfo() {
         });
 }
 
+//if the user chooses to not enter more member this function runs
 function finalizeTeam() {
 
 
-
+    //array to store final HTML for new file
     const totalHTML = []
+
+    //beginning of HTML
     const htmlEl = `
 <!DOCTYPE html>
 <html lang="en">
@@ -261,6 +274,7 @@ function finalizeTeam() {
 
     totalHTML.push(htmlEl);
 
+//add cards for each employee
     for (let i = 0; i < employeesFinal.length; i++) {
         let card = `
             <div class="card border-light md-4 employeecard">
@@ -275,7 +289,7 @@ function finalizeTeam() {
 
 
 
-
+// if array has office number, add this info for managers
         if (employeesFinal[i].officeNumber) {
 
             card += `
@@ -283,11 +297,15 @@ function finalizeTeam() {
            
     `
         }
+
+  // if array has github, add this info for enginners   
         if (employeesFinal[i].github) {
             card += `
             <li class="list-group-item">GitHub Profile: <a href="https://github.com/${employeesFinal[i].github}" target="_blank">${employeesFinal[i].github}</a></li>
     `
         }
+
+        // if array has school, add this info for interns
         if (employeesFinal[i].school) {
             card += `
             <li class="list-group-item">School: ${employeesFinal[i].school}</li>
@@ -313,6 +331,7 @@ function finalizeTeam() {
 </html>`
     totalHTML.push(finalHTML);
 
+//create new file for employee profiles
     fs.writeFile(`./dist/teamprofile.html`, totalHTML.join(""), function (err) {
 
     })
@@ -320,4 +339,5 @@ function finalizeTeam() {
 
 }
 
+//start app
 managerInfo()

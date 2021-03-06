@@ -1,7 +1,11 @@
 const Manager= require("../lib/Manager.js");
 
+
+//Testing Manager
 describe('Manager', () => {
 
+
+    //Testing Manager Name
     it("outputs Manager name", () => {
 
         const name = "Morgan";
@@ -12,7 +16,8 @@ describe('Manager', () => {
 
     });
 
-    it("outputs employee id", () => {
+    //Testing Manager ID
+    it("outputs Manager id", () => {
 
         const id = 75;
 
@@ -21,6 +26,8 @@ describe('Manager', () => {
 
 
     });
+
+    //Testing Manager email
     it("outputs Manager email", () => {
 
         const email = "mabailey079@gmail.com";
@@ -30,6 +37,8 @@ describe('Manager', () => {
 
 
     });
+
+    //Testing Manager office number
     it("outputs Manager Office Number", () => {
 
         const officeNumber = "6107246633";
@@ -39,6 +48,8 @@ describe('Manager', () => {
 
 
     });
+
+    //Testing Manager role
     it("outputs Manager role", () => {
 
         const role = "Manager";
